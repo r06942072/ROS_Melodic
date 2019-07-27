@@ -1,5 +1,5 @@
 # ROS_Melodic
-*Ubuntu install of ROS Melodic  
+### Ubuntu install of ROS Melodic  
 http://wiki.ros.org/melodic/Installation/Ubuntu
 
 *Install Desktop-Full:  ROS, rqt, rviz, robot-generic libraries, 2D/3D simulators and 2D/3D perception  
@@ -11,3 +11,10 @@ http://wiki.ros.org/melodic/Installation/Ubuntu
 *check ROS related env var  
 ```env | grep ROS```
 
+### catckin workspace
+http://wiki.ros.org/ROS/Tutorials/InstallingandConfiguringROSEnvironment
+
+*make sure that ROS_PACKAGE_PATH include my path
+```echo $ROS_PACKAGE_PATH```
+
+### 
