@@ -6,7 +6,19 @@ google-chrome
 ```
 ### A tool for spliting terminal  
 ```sudo apt-get update```  
-```sudo apt-get install terminator```  
+```sudo apt-get install terminator``` 
+
+*Split terminals vertically:  
+ctrl + shift + E
+
+*Split terminals horizontally:  
+ctrl + shift + O
+
+*move btw terminal  
+alt + arrow
+
+*close window
+ctrl + D
 
 ### python project with pipenv with Python 3 on Ubuntu
 ```cd project folder/
