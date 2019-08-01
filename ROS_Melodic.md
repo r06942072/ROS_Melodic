@@ -21,29 +21,28 @@ http://wiki.ros.org/ROS/Tutorials/InstallingandConfiguringROSEnvironment
 
 ### Creating a ROS Package
 ```sudo apt-get install ros-melodic-ros-tutorials```
-
-*create a new package called 'beginner_tutorials'  
-```cd ~/catkin_ws/src```
-
-*catkin_create_pkg <package_name> [depend1] [depend2] [depend3]  
-```catkin_create_pkg beginner_tutorials std_msgs rospy roscpp```
+  
+*catkin_create_pkg <package_name> [depend1] [depend2] [depend3]   
+```cd ~/catkin_ws/src```  
+```catkin_create_pkg beginner std_msgs rospy roscpp```
 
 *Building a catkin workspace  
 ```
 cd ~/catkin_ws
 catkin_make
 ```
-
-*source the generated setup file  
-```. ~/catkin_ws/devel/setup.bash```
+ 
+*source the generated setup file, after doing this, we can see the package by command ```rospack```  
+```. ~/catkin_ws/devel/setup.bash```  
 
 *check first-order dependencies of package  
 *rospack depends1 [package_name]  
-```rospack depends1 beginner_tutorials``` 
-
+```rospack depends1 beginner``` 
 
 *check all nested dependencies  
-```rospack depends beginner_tutorials```
+```rospack depends beginner```  
+
+### Building a ROS Package ???  
 
 ### ROS Nodes
 http://wiki.ros.org/ROS/Tutorials/UnderstandingNodes
@@ -101,8 +100,33 @@ rosparam allows you to store and manipulate data on the ROS Parameter Server
 
 ```rosparam get /```  
 
-### Using rqt_console and roslaunch  
-http://wiki.ros.org/ROS/Tutorials/UsingRqtconsoleRoslaunch  
+### Using roslaunch  
+```roscore```  
+roslaunch starts nodes as defined in a launch file.  
+*In project **beginner**, create a folder named launch  
+```cd ~/catkin_ws/src/beginner```  
+```mkdir launch```  
+```cd launch```  
+
+*create a launch file  
+*look in the code, find out that turtlesim2 to mimic turtlesim1   
+```vim turtlemimic.launch```  
+
+*launch it  
+```roslaunch beginner turtlemimic.launch```
+???   
+
+### Using rosed to edit files in ROS   
+rosed [package_name] [filename]  
+
+### Creating a ROS msg and srv  
+```
+roscd beginner
+mkdir msg
+echo "int64 num" > msg/Num.msg
+```
+
+
 
 
 
