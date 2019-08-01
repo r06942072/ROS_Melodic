@@ -125,6 +125,81 @@ roscd beginner
 mkdir msg
 echo "int64 num" > msg/Num.msg
 ```
+*edit package.xml and CMakeLists.txt   
+
+*make sure that ROS can see the message  
+```rosmsg show Num```  
+```rosmsg show beginner/Num```   
+
+```
+roscd beginner
+mkdir srv
+```  
+*copy an existing srv from another package.  
+```roscp rospy_tutorials AddTwoInts.srv srv/AddTwoInts.srv```  
+
+*make sure that ROS can see the service   
+```rossrv show AddTwoInts```  
+
+### Writing a Simple Publisher and Subscriber (Python)  
+```
+roscd beginner  
+mkdir scripts  
+cd scripts
+wget https://raw.github.com/ros/ros_tutorials/kinetic-devel/rospy_tutorials/001_talker_listener/talker.py   
+wget https://raw.github.com/ros/ros_tutorials/kinetic-devel/rospy_tutorials/001_talker_listener/listener.py  
+chmod +x *.py  
+```
+
+*compile  
+```
+cd ~/catkin_ws
+catkin_make
+```  
+generate JS code, C++ code, Lisp code  
+
+
+### examines running the simple publisher and subscriber   
+```roscore```  
+```cd ~/catkin_ws```  
+```source ./devel/setup.bash```    source it, everytime I open a new terminal???    
+```rosrun beginner talker.py```   
+
+```cd ~/catkin_ws```  
+```source ./devel/setup.bash ```  
+```rosrun beginner listener.py```   
+
+### Writing a Simple Service and Client (Python)
+```roscd beginner/scripts```  
+```vim add_two_ints_server.py```  
+```vim add_two_ints_client.py```  
+```chmod +x *.py```  
+
+```cd ~/catkin_ws```  
+```catkin_make```  
+
+### Examining the Simple Service and Client  
+```rosrun beginner add_two_ints_server.py```  
+```rosrun beginner add_two_ints_client.py 1 3```  
+cannot find the path of AddTwoInts service???   
+
+### record by rosbag  
+published messages are recorded 
+```rosbag record -a```  
+
+*rosbag info <your bagfile>   
+  
+*rosbag play <your bagfile>   
+  
+
+
+
+
+
+
+
+
+
 
 
 
