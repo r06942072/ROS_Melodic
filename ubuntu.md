@@ -17,7 +17,7 @@ ctrl + shift + O
 *move btw terminal  
 alt + arrow
 
-*close window
+*close window  
 ctrl + D
 
 ### python project with pipenv with Python 3 on Ubuntu
