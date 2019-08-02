@@ -32,8 +32,8 @@ cd ~/catkin_ws
 catkin_make
 ```
  
-*source the generated setup file, after doing this, we can see the package by command ```rospack```  
-```. ~/catkin_ws/devel/setup.bash```  
+*source the generated setup file, after doing this, we can see the package by command ```rospack```, add this line into ~/.bashrc  
+```source ~/catkin_ws/devel/setup.bash```  
 
 *check first-order dependencies of package  
 *rospack depends1 [package_name]  
@@ -42,7 +42,7 @@ catkin_make
 *check all nested dependencies  
 ```rospack depends beginner```  
 
-### Building a ROS Package ???  
+### Building a ROS Package ?  
 
 ### ROS Nodes
 http://wiki.ros.org/ROS/Tutorials/UnderstandingNodes
@@ -105,16 +105,17 @@ rosparam allows you to store and manipulate data on the ROS Parameter Server
 roslaunch starts nodes as defined in a launch file.  
 *In project **beginner**, create a folder named launch  
 ```cd ~/catkin_ws/src/beginner```  
-```mkdir launch```  
-```cd launch```  
+```mkdir launch```   
 
 *create a launch file  
 *look in the code, find out that turtlesim2 to mimic turtlesim1   
-```vim turtlemimic.launch```  
+```vim launch/turtlemimic.launch```  
 
 *launch it  
-```roslaunch beginner turtlemimic.launch```
-???   
+```roslaunch beginner turtlemimic.launch```  
+
+*
+```rostopic pub /turtlesim1/turtle1/cmd_vel geometry_msgs/Twist -r 1 -- '[2.0, 0.0, 0.0]' '[0.0, 0.0, -1.8]'```  
 
 ### Using rosed to edit files in ROS   
 rosed [package_name] [filename]  
@@ -159,14 +160,11 @@ catkin_make
 generate JS code, C++ code, Lisp code  
 
 
-### examines running the simple publisher and subscriber   
+### examines running the simple publisher and subscriber, use 3 terminals  
 ```roscore```  
-```cd ~/catkin_ws```  
-```source ./devel/setup.bash```    source it, everytime I open a new terminal???    
+
 ```rosrun beginner talker.py```   
 
-```cd ~/catkin_ws```  
-```source ./devel/setup.bash ```  
 ```rosrun beginner listener.py```   
 
 ### Writing a Simple Service and Client (Python)
